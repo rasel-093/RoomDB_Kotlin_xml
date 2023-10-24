@@ -29,6 +29,38 @@ class MainActivity : AppCompatActivity() {
         binding.btnReadData.setOnClickListener{
             readData()
         }
+        binding.btnDeleteAll.setOnClickListener{
+            deleteAll()
+        }
+        binding.updateBtn.setOnClickListener{
+            update()
+        }
+    }
+
+    private fun update() {
+        val firstName = binding.etFirstName.text.toString()
+        val lastName = binding.etLastName.text.toString()
+        val rollNo = binding.etRollNo.text.toString()
+
+        if (firstName.isNotEmpty() && lastName.isNotEmpty() && rollNo.isNotEmpty()) {
+            GlobalScope.launch(Dispatchers.IO) {
+                appDB.studentDao().update(
+                    firstName = firstName,
+                    lastName = lastName,
+                    rollNo = rollNo.toInt()
+                )
+            }
+            Toast.makeText(this@MainActivity,"Data updated", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(this@MainActivity,"Fill out all fields", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun deleteAll() {
+        GlobalScope.launch {
+             appDB.studentDao().deleteAll()
+        }
     }
 
 

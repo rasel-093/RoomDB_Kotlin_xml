@@ -22,4 +22,7 @@ interface StudentDao {
 
     @Query("DELETE FROM STUDENT_TABLE")
     suspend fun deleteAll()
+
+    @Query("UPDATE student_table SET first_name=:firstName, last_name =:lastName WHERE roll_no =:rollNo")
+    fun update(firstName: String, lastName: String,rollNo: Int)
 }
