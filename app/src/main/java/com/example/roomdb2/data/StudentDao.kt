@@ -17,12 +17,18 @@ interface StudentDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(student: Student)
 
-    @Delete
-    suspend fun delete(student: Student)
+    @Query("DELETE FROM student_table WHERE roll_no = :roll")
+    suspend fun delete(roll: Int)
 
     @Query("DELETE FROM STUDENT_TABLE")
     suspend fun deleteAll()
 
     @Query("UPDATE student_table SET first_name=:firstName, last_name =:lastName WHERE roll_no =:rollNo")
     fun update(firstName: String, lastName: String,rollNo: Int)
+
+    @Query("SELECT COUNT(*) FROM student_table WHERE roll_no = :roll ")
+    fun getCount(roll: Int): Int
+
+    @Query("SELECT * FROM student_table WHERE roll_no LIKE  :roll LIMIT 1 ")
+    suspend fun findByRoll2(roll: Int): Student?
 }

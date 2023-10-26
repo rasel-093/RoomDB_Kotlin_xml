@@ -55,7 +55,8 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
+        app:layout_constraintTop_toBottomOf="@+id/et_last_name"
+        android:maxLength="7"/>
 
     <Button
         android:id="@+id/btn_write_data"
@@ -80,59 +81,70 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_write_data" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_write_data"
+        android:maxLength="7"/>
 
     <Button
-        android:id="@+id/btnReadData"
+        android:id="@+id/read_roll_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="169dp"
-        android:text="Read Data"
+        android:text="Read"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_roll_no_read" />
 
     <TextView
         android:id="@+id/tv_first_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="19dp"
         android:textColor="@color/black"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnReadData" />
+        app:layout_constraintTop_toBottomOf="@+id/read_roll_btn"
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/tv_last_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_first_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_first_name" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_first_name"
+        app:layout_constraintTop_toBottomOf="@+id/delete_roll_btn"
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/tv_roll_no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
         android:textColor="@color/black"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_last_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_last_name" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_last_name"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btn_delete_all"
+        android:id="@+id/delete_roll_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="Delete All"
+        android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnReadData"
-        app:layout_constraintTop_toTopOf="@+id/btnReadData" />
+        app:layout_constraintStart_toEndOf="@+id/read_roll_btn"
+        app:layout_constraintTop_toTopOf="@+id/read_roll_btn" />
 
     <View
         android:id="@+id/divider"

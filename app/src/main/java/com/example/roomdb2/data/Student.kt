@@ -9,6 +9,6 @@ data class Student(
     @PrimaryKey(autoGenerate = true) val id: Int?,
     @ColumnInfo(name = "first_name") val firstName: String?,
     @ColumnInfo(name = "last_name") val lastName: String?,
-    @ColumnInfo(name = "roll_no") val rollNo: Int?
+   @ColumnInfo(name = "roll_no") val rollNo: Int?
 
 )
